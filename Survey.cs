@@ -1,37 +1,52 @@
 using System;
+using System.Collections.Generic;
 using System.Net.NetworkInformation;
 
 namespace LinkedIn_Learning_C_Sharp
 {
     class Survey
-    {
+    { 
+        class Answer
+        {
+            public string Name;
+            public int Age;
+            public string BirthMonth;
+
+            public void Display()
+            {
+                Console.WriteLine("Thank you for your information " + Name + ".");
+                Console.WriteLine("You are " + Age + " years old. You were born in " + BirthMonth + " (great month).");
+                
+                if (BirthMonth == "December")
+                {
+                    Console.WriteLine("You are a Sagittarius.");
+                }
+                else if (BirthMonth == "April")
+                {
+                    Console.WriteLine("You are a Taurus.");
+                }
+                else if (BirthMonth == "May")
+                {
+                    Console.WriteLine("You are a Gemini.");
+                }
+            }
+            
+        }
         /*static void Main(string[] args)
         {
-            Console.WriteLine("What is your name?");
-            var name = TryAnswer();
+            var answerList = new List<Answer>();
+            var newAnswer = new Answer();
+            newAnswer.Name = Util.Console.Ask("What is your name?");
+            TryAnswer();
             
-            Console.WriteLine("How old are you? (# only please!)");
-            var age = TryAnswer();
+            newAnswer.Age = int.Parse(Util.Console.Ask("How old are you? (# only please!)"));
+            TryAnswer();
             
-            Console.WriteLine("What month were you born?");
-            var birthMonth = TryAnswer();
-           
-            Console.WriteLine("Thank you for your information " + name + ".");
-            Console.WriteLine("You are " + age + " years old. You were born in " + birthMonth + " (great month).");
+            newAnswer.BirthMonth = Util.Console.Ask("What month were you born?");
+            TryAnswer();
 
-            if (birthMonth == "December")
-            {
-                Console.WriteLine("You are a Sagittarius.");
-            }
-            else if (birthMonth == "April")
-            {
-                Console.WriteLine("You are a Taurus.");
-            }
-            else if (birthMonth == "May")
-            {
-                Console.WriteLine("You are a Gemini.");
-            }
-        }
+            newAnswer.Display();
+        }*/
         static string TryAnswer()
         {
             var answer = Console.ReadLine();
@@ -41,6 +56,7 @@ namespace LinkedIn_Learning_C_Sharp
                 return Console.ReadLine();
             }
             return answer;
-        }*/
+        }
     }
+    
 }
