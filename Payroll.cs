@@ -16,6 +16,8 @@ namespace LinkedIn_Learning_C_Sharp
             payees.Add(new Teacher());
             payees.Add(new Teacher());
             payees.Add(new Principal());
+            
+            Logger.Log("PayRoll Started", "Payroll");
         }
         public void PayAll()
         {
@@ -23,6 +25,8 @@ namespace LinkedIn_Learning_C_Sharp
             {
                 payee.Pay();
             }
+            
+            Logger.Log("PayAll completed", "Payroll", 2);
         }   
     }
 }

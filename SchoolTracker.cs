@@ -16,7 +16,7 @@ namespace LinkedIn_Learning_C_Sharp
         static List<Student> students = new List<Student>();
         static void Main(string[] args)
         {
-            Logger.Log("Tracker Started" 1, "SchoolTracker", 2);        
+            Logger.Log("Tracker Started", priority: 0);        
             Payroll payroll = new Payroll();
             payroll.PayAll();
             
@@ -26,6 +26,7 @@ namespace LinkedIn_Learning_C_Sharp
             {
                 try
                 {
+                    Logger.Log("Adding new student...");
                     var newStudent = new Student();
 
                     newStudent.Name = Util.Console.Ask("Enter student's name:");

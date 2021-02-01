@@ -3,9 +3,10 @@ namespace LinkedIn_Learning_C_Sharp
 {
     public class Logger
     {
-        public static void Log(string msg, int priority, string system)
+        private const string DefaultSystemName = "SchoolTracker";
+        public static void Log(string msg, string system = DefaultSystemName, int priority = 1)
         {
-            Console.WriteLine("System: {0}, Priority: {1}, Message: {2}",system, priority, msg);
+            Console.WriteLine($"System: {system}, Priority: {priority}, Message: {msg}");
         }
     }
 }
