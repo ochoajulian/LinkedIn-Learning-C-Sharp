@@ -32,18 +32,27 @@ namespace LinkedIn_Learning_C_Sharp
             }
             
         }
+
+        static public event Action Posted;
         /*static void Main(string[] args)
         {
+            var stats = new Stats();
+            stats.Start();
             var answerList = new List<Answer>();
             var newAnswer = new Answer();
-            newAnswer.Name = Util.Console.Ask("What is your name?");
-            TryAnswer();
+            Console.WriteLine("What is your name?");
+            newAnswer.Name = TryAnswer();
             
-            newAnswer.Age = int.Parse(Util.Console.Ask("How old are you? (# only please!)"));
-            TryAnswer();
+            Console.WriteLine("How old are you? (# only please!)");
+            newAnswer.Age = int.Parse(TryAnswer());
             
-            newAnswer.BirthMonth = Util.Console.Ask("What month were you born?");
-            TryAnswer();
+            Console.WriteLine("What month were you born?");
+            newAnswer.BirthMonth = TryAnswer();
+
+            if (Posted != null)
+            {
+                Posted();
+            }
 
             newAnswer.Display();
         }*/
